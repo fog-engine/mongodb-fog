@@ -1,0 +1,11 @@
+base 'ubuntu-precise'
+
+volume('/var/lib/mongodb') do
+  file('mongodb.conf') do
+    template('mongodb.conf.erb', {})
+  end
+end
+
+exports do
+  env('MONGODB_URI' => '')
+end
